@@ -6,6 +6,7 @@ using namespace std;
 
 int main() {
 	int sizeA, sizeC, temp;
+	//grabs both array sizes and fill them
 	cin >> sizeA;
 	vector<int> a(sizeA);
 	for (int i = 0; i < sizeA; ++i)
@@ -15,6 +16,7 @@ int main() {
 	}
 
 	cin >> sizeC;
+	//using a set as we only need to find items in it and there are no repeats 
 	unordered_set<int> c;
 	for (int i = 0; i < sizeC; ++i)
 	{
@@ -23,6 +25,7 @@ int main() {
 	}
 
 	vector<int> b;
+	//for every member of c we find c[] - a[] = b[] and see if that possible value fills every spot in C
 	for (int x : c)
 	{
 		int possible = x - a[0];
